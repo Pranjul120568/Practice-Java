@@ -2,6 +2,7 @@ package com.pdinc.alljavthings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +30,6 @@ Button btn3;
         Log.d("TAG","Btn 3 is pressed");
     }
     public void onButtonClicked(View view) {
-        Log.d("TAG","Btn 1 is pressed");
+        startActivity(new Intent(this, MainActivity2.class));
     }
 }
