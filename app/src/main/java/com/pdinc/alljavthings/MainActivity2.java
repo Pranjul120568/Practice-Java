@@ -15,13 +15,12 @@ import android.widget.EditText;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    Button btn=findViewById(R.id.dialBtn);
-    EditText  et1=findViewById(R.id.dialTv);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
+        Button btn=findViewById(R.id.dialBtn);
+        EditText  et1=findViewById(R.id.dialTv);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,14 +37,13 @@ public class MainActivity2 extends AppCompatActivity {
                     );
                 }
             }
+
+            private void callNumber() {
+                String telNo=et1.getText().toString();
+                Uri uri =Uri.parse("tel:" + telNo);
+                Intent i=new Intent(Intent.ACTION_CALL);
+                startActivity(i);
+            }
         });
-
+        }
     }
-    void callNumber() {
-      String telNo=et1.getText().toString();
-      Uri uri =Uri.parse("tel:" + telNo);
-        Intent i=new Intent(Intent.ACTION_CALL);
-        startActivity(i);
-    }
-
-}

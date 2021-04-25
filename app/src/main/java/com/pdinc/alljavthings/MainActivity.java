@@ -25,19 +25,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 Log.d("TAG", "Btn 2 is pressed");
                 //NORMAL PERMISSION
-                ConnectivityManager cm=(ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-                NetworkInfo netInfo=cm.getActiveNetworkInfo();
-                boolean isConnected=netInfo!= null && netInfo.isConnected();
-                TextView tv1=findViewById(R.id.tv1);
-                tv1.setText(isConnected ? "Connected":"DisConnected");
+                ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+                NetworkInfo netInfo = cm.getActiveNetworkInfo();
+                boolean isConnected = netInfo != null && netInfo.isConnected();
+                TextView tv1 = findViewById(R.id.tv1);
+                tv1.setText(isConnected ? "Connected" : "DisConnected");
             }
         });
-
-         void onButtonClicked() {
-            Intent i;
-            i=new Intent(this,MainActivity2.class);
-            startActivity(i);
-        }
     }
     Button btn3;
     @Override
@@ -46,4 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d("TAG", "Btn 3 is pressed");
     }
 
-}
+    public void onButtonClicked(View view) {
+            Intent i;
+            i=new Intent(this,MainActivity2.class);
+            startActivity(i);
+        }
+    }
