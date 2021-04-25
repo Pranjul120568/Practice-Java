@@ -6,22 +6,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btn1"
         android:onClick="onButtonClicked"
-        android:text="Button 1"
+        android:text="Switch Activity"
+        android:layout_margin="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv1"
+        android:textSize="18sp"
+        android:text="STATUS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btn2"
-        android:text="Button 2"
+        android:text="Network Status"
+        android:layout_margin="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btn3"
         android:text="Button 3"
+        android:layout_margin="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
