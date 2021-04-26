@@ -13,37 +13,45 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.pdinc.alljavthings.ListViews.MainListV;
+
 public class MainActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Button btn=findViewById(R.id.dialBtn);
-        EditText  et1=findViewById(R.id.dialTv);
+        Button btn = findViewById(R.id.dialBtn);
+        Button btn1 = findViewById(R.id.SwitchBtn1);
+        EditText et1 = findViewById(R.id.dialTv);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int permission= ContextCompat.checkSelfPermission(MainActivity2.this, Manifest.permission.CALL_PHONE);
-                if(permission== PackageManager.PERMISSION_GRANTED){
+                int permission = ContextCompat.checkSelfPermission(MainActivity2.this, Manifest.permission.CALL_PHONE);
+                if (permission == PackageManager.PERMISSION_GRANTED) {
                     callNumber();
-                }else{
+                } else {
                     ActivityCompat.requestPermissions(
                             MainActivity2.this,
                             new String[]{
                                     Manifest.permission.CALL_PHONE
                             },
-                     121
+                            121
                     );
                 }
             }
 
             private void callNumber() {
-                String telNo=et1.getText().toString();
-                Uri uri =Uri.parse("tel:" + telNo);
-                Intent i=new Intent(Intent.ACTION_CALL);
+                String telNo = et1.getText().toString();
+                Uri uri = Uri.parse("tel:" + telNo);
+                Intent i = new Intent(Intent.ACTION_CALL);
                 startActivity(i);
             }
         });
-        }
+
     }
+
+    public void SwitchActivity (View view){
+startActivity(new Intent(this, MainListV.class));
+    }
+}

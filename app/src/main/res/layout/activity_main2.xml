@@ -22,4 +22,11 @@
         android:text="DIAL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:onClick="SwitchActivity"
+        android:id="@+id/SwitchBtn1"
+        android:text="Switch List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
