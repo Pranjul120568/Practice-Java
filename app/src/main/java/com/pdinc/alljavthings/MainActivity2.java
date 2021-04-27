@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.pdinc.alljavthings.ListViews.MainListV;
+import com.pdinc.alljavthings.ListViews.RecycleAct;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -50,8 +51,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
     }
-
     public void SwitchActivity (View view){
-startActivity(new Intent(this, MainListV.class));
+startActivity(new Intent(this, RecycleAct.class));
     }
 }
