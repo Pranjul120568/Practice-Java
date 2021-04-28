@@ -3,6 +3,9 @@ package com.pdinc.alljavthings;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.content.Intent;
@@ -15,6 +18,8 @@ import android.widget.EditText;
 
 import com.pdinc.alljavthings.ListViews.MainListV;
 import com.pdinc.alljavthings.ListViews.RecycleAct;
+import com.pdinc.alljavthings.fragments.DownFragment;
+import com.pdinc.alljavthings.fragments.UpFragment;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -25,6 +30,29 @@ public class MainActivity2 extends AppCompatActivity {
         Button btn = findViewById(R.id.dialBtn);
         Button btn1 = findViewById(R.id.SwitchBtn1);
         EditText et1 = findViewById(R.id.dialTv);
+        Button addBtn =findViewById(R.id.fragAddBtn);
+        Button subBtn =findViewById(R.id.fragSubBtn);
+
+        Bundle b= new Bundle();
+        final int[] count={0};
+        b.putIntArray("Key",count);
+        Fragment Up= new UpFragment();
+        Up.setArguments(b);
+        Bundle b1= new Bundle();
+        b1.putIntArray("Key",count);
+        Fragment Down= new DownFragment();
+        Down.setArguments(b1);
+        FragmentManager i=getSupportFragmentManager();
+        addBtn.setOnClickListener(v -> {
+            i.beginTransaction().replace(R.id.frag1, Up).setReorderingAllowed(true)
+                    .addToBackStack("name").commit();
+        });
+
+        subBtn.setOnClickListener(v -> {
+            i.beginTransaction().replace(R.id.frag1, Down).setReorderingAllowed(true)
+                    .addToBackStack("name").commit();
+        });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

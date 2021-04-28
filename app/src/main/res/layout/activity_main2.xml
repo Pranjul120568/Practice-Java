@@ -9,6 +9,35 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".MainActivity2">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/fragAddBtn"
+        android:text="ADDFrag"
+        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/fragSubBtn"
+        android:text="SUBFRAG"
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" >
+        <FrameLayout
+            android:id="@+id/frag1"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+    </LinearLayout>
+
     <include layout="@layout/common_partial_header"/>
     <EditText
     android:id="@+id/dialTv"
