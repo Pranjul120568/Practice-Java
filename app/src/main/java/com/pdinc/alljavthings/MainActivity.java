@@ -7,12 +7,14 @@ import androidx.core.app.NotificationManagerCompat;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.icu.number.SimpleNotation;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static android.content.Intent.ACTION_VIEW;
 
 public class MainActivity extends AppCompatActivity  {
     Button btn2;
@@ -45,20 +49,35 @@ public class MainActivity extends AppCompatActivity  {
         });
         Button btnYes;
         btnYes = findViewById(R.id.btn3);
-//        NotificationManager nm= (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-////Only to devices having greater OS than Oreo
-//        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
-//            nm.createNotificationChannel(new NotificationChannel("first","default", NotificationManager.IMPORTANCE_DEFAULT));
-//        }
-        btnYes.setOnClickListener(v -> {
-//            //************************************Building Notification
-//            Notification sn= new NotificationCompat.Builder(this,"first")
-//                    .setContentTitle("Hello")
-//                    .setContentText("Hello World!")
-//                    .setSmallIcon(R.drawable.ic_launcher_foreground)
-//                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-//                    .build();
-//                    nm.notify(1,sn);
+        NotificationManager nm= (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+//Only to devices having greater OS than Oreo
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            nm.createNotificationChannel(new NotificationChannel("first","default", NotificationManager.IMPORTANCE_DEFAULT));
+        }
+        btnYes.setOnClickListener(v ->{
+            //************************************Building Notification
+            Notification sn= new NotificationCompat.Builder(this,"first")
+                    .setContentTitle("Hello")
+                    .setContentText("Hello World!")
+                    .setSmallIcon(R.drawable.ic_launcher_foreground)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .build();
+                    nm.notify(1,sn);
+        });
+
+        Button clickableNotiBtn=findViewById(R.id.btn4);
+        clickableNotiBtn.setOnClickListener(v ->{
+            Intent in=new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
+            PendingIntent pi = PendingIntent.getActivity(this,123,in,PendingIntent.FLAG_UPDATE_CURRENT);
+            Notification cn=new NotificationCompat.Builder(this,"first")
+                    .setContentTitle("Hello")
+                    .addAction(R.drawable.ic_launcher_foreground,"Click",pi)
+                    .setAutoCancel(true)
+                    .setContentText("Hello World!")
+                    .setSmallIcon(R.drawable.ic_launcher_foreground)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .build();
+            nm.notify(2,cn);
         });
     }
 
