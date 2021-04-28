@@ -9,7 +9,8 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".MainActivity2">
-<EditText
+    <include layout="@layout/common_partial_header"/>
+    <EditText
     android:id="@+id/dialTv"
     android:hint="Enter Number"
     android:textSize="42sp"
