@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.pdinc.alljavthings.DataStorage.RWActivity;
 import com.pdinc.alljavthings.ListViews.MainListV;
 import com.pdinc.alljavthings.ListViews.RecycleAct;
 import com.pdinc.alljavthings.fragments.DownFragment;
@@ -32,7 +33,6 @@ public class MainActivity2 extends AppCompatActivity {
         EditText et1 = findViewById(R.id.dialTv);
         Button addBtn =findViewById(R.id.fragAddBtn);
         Button subBtn =findViewById(R.id.fragSubBtn);
-
         Bundle b= new Bundle();
         final int[] count={0};
         b.putIntArray("Key",count);
@@ -47,7 +47,6 @@ public class MainActivity2 extends AppCompatActivity {
             i.beginTransaction().replace(R.id.frag1, Up).setReorderingAllowed(true)
                     .addToBackStack("name").commit();
         });
-
         subBtn.setOnClickListener(v -> {
             i.beginTransaction().replace(R.id.frag1, Down).setReorderingAllowed(true)
                     .addToBackStack("name").commit();
@@ -69,7 +68,6 @@ public class MainActivity2 extends AppCompatActivity {
                     );
                 }
             }
-
             private void callNumber() {
                 String telNo = et1.getText().toString();
                 Uri uri = Uri.parse("tel:" + telNo);
@@ -77,9 +75,8 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
     }
     public void SwitchActivity (View view){
-startActivity(new Intent(this, RecycleAct.class));
+startActivity(new Intent(this, RWActivity.class));
     }
 }

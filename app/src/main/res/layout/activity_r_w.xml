@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rwlayout"
+    android:orientation="vertical"
+    tools:context=".DataStorage.RWActivity">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:textSize="22sp"
+        android:text="WRIte"
+        android:id="@+id/writeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/enterEt"
+            android:hint="Enter Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:textSize="22sp"
+        android:text="Read"
+        android:id="@+id/readBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/showTv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_weight="1"
+            android:textSize="22sp"
+            android:text="RED"
+            android:id="@+id/redbtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:textSize="22sp"
+            android:layout_weight="1"
+            android:text="GREEN"
+            android:id="@+id/greenbtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:textSize="22sp"
+            android:layout_weight="1"
+            android:text="BLUE"
+            android:id="@+id/bluebtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</LinearLayout>

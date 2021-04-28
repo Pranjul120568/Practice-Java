@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btn3"
-        android:text="Button 3"
+        android:text="Notification"
         android:layout_margin="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

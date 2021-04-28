@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity  {
                     .build();
                     nm.notify(1,sn);
         });
-
         Button clickableNotiBtn=findViewById(R.id.btn4);
         clickableNotiBtn.setOnClickListener(v ->{
             Intent in=new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
