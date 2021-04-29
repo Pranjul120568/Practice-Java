@@ -70,4 +70,50 @@
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_weight="1"
+            android:textSize="22sp"
+            android:text="SAVE DATA"
+            android:id="@+id/SaveDatabtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:textSize="22sp"
+            android:layout_weight="1"
+            android:text="Fetch Data"
+            android:id="@+id/FetchDatabtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <TextView
+        android:textSize="26sp"
+        android:text="Name"
+        android:id="@+id/nametv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="26sp"
+        android:text="Ph No."
+        android:id="@+id/numberTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+    android:textSize="26sp"
+    android:text="age"
+    android:id="@+id/agetv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="26sp"
+        android:text="addresstv"
+        android:id="@+id/addresstv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
